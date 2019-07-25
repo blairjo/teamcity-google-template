@@ -31,7 +31,7 @@ limitations under the License.
 
 {% set DISK_SIZE = 30 %}
 {% set DISK_TYPE = 'pd-standard' %}
-{% set MACHINE_TYPE = 'g1-small' %}
+{% set MACHINE_TYPE = 'custom-2-4096' %}
 
 {% macro GlobalComputeUrl(project, collection, name) -%}
 {{ COMPUTE_URL_BASE }}projects/{{ project }}/global/{{ collection }}/{{ name }}
