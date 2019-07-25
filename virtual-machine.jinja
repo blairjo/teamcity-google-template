@@ -29,19 +29,9 @@ limitations under the License.
   {% set SERVER_URL = 'http://${COREOS_GCE_HOSTNAME}' %}
 {%- endif %}
 
-{% if properties['size'] == 'small' %}
-  {% set DISK_SIZE = 30 %}
-  {% set DISK_TYPE = 'pd-standard' %}
-  {% set MACHINE_TYPE = 'custom-1-3072' %}
-{% elif properties['size'] == 'large' %}
-  {% set DISK_SIZE = 100 %}
-  {% set DISK_TYPE = 'pd-ssd' %}
-  {% set MACHINE_TYPE = 'custom-4-8192' %}
-{% else %}
-  {% set DISK_SIZE = 50 %}
-  {% set DISK_TYPE = 'pd-ssd' %}
-  {% set MACHINE_TYPE = 'custom-2-4096' %}
-{% endif %}
+{% set DISK_SIZE = 30 %}
+{% set DISK_TYPE = 'pd-standard' %}
+{% set MACHINE_TYPE = 'f1-micro' %}
 
 {% macro GlobalComputeUrl(project, collection, name) -%}
 {{ COMPUTE_URL_BASE }}projects/{{ project }}/global/{{ collection }}/{{ name }}
